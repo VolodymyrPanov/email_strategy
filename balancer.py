@@ -1,9 +1,9 @@
 import pandas as pd
 import numpy as np
 
-inbox_need = pd.read_csv('teams_in_plus_18_22_Jul.csv', usecols=[0,1,2])
-team_df = pd.read_csv('team_hours_18_22_Jul.csv', usecols=[0,1,2])
-inbox_need_deficit = pd.read_csv('teams_in_minus_18_22_Jul.csv', usecols=[0,1,2])
+inbox_need = pd.read_csv(input("Enter name of the team in plus file:"), usecols=[0,1,2])
+team_df = pd.read_csv(input("Enter name of the team hours file:"), usecols=[0,1,2])
+inbox_need_deficit = pd.read_csv(input("Enter name of the team in minus file:"), usecols=[0,1,2])
 
 def balance_own_demand(team_df, inbox_need):
     scenario_name_waste = []
