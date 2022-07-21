@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-from context_manager import FileManager
 
 inbox_need = pd.read_csv('teams_in_plus_18_22_Jul.csv', usecols=[0,1,2])
 team_df = pd.read_csv('team_hours_18_22_Jul.csv', usecols=[0,1,2])
