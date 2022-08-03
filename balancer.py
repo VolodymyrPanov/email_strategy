@@ -59,6 +59,7 @@ def scenario_creator(inbox_need_deficit):
     scenario_res_name = []
     inbox_assignment = []
     region_assignment = []
+    fulfillment = float(input("Enter fulfilment % for teams in minus:"))
     team_arr = balance_own_demand(team_df=team_df, inbox_need=inbox_need).reset_index()
 
     for s in range(len(team_arr['team'])):
@@ -67,7 +68,7 @@ def scenario_creator(inbox_need_deficit):
         for ind, row in inbox_need_deficit.iterrows():
             res = 0
             for i in range(len(team_arr['team'])):
-                if res < row['need'] * 0.95:
+                if res < row['need'] * fulfillment:
                     if team_arr['available'][i] < row['need'] and team_arr['team'][i] not in used_teams:
                         res += team_arr['available'][i]
                         used_teams.append(team_arr['team'][i])
