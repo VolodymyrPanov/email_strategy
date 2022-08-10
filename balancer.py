@@ -22,8 +22,8 @@ def balance_own_demand(team_df, inbox_need):
         for inde, row in inbox_need.iterrows():
             result = 0
             for ind in range(len(team_df['team'])):
-                if result < row['need'] * 0.95 and team_df['available'][ind] < row['need']:
-                    if team_df['region'][ind] == row['region']:
+                if result < row['need'] * 0.95:
+                    if team_df['region'][ind] == row['region'] and team_df['available'][ind] < row['need']:
                         result += team_df['available'][ind]
                         team_lst.append(team_df['team'][ind])
                         scenario_name.append(f'Scenario {sc}')
