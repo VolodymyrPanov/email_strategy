@@ -2,8 +2,10 @@ import pandas as pd
 from snowflake_utils.analyticsdb_io import AnalyticsDBConnector
 import re
 
+email = input(f'write your email address: ')
+
 db_io = AnalyticsDBConnector(schema_name='RPT_CS_DATA')
-db_io.use_local_connection('volodymyr.panov@transferwise.com')
+db_io.use_local_connection(email)
 schema = 'RPT_CS_DATA'
 
 start_period = input(f'specify start date in a yyyy-mm-dd format as a string:')
