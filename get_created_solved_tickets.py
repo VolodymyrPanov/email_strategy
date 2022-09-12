@@ -37,7 +37,7 @@ select
         and CONTACT__CHANNEL = 'email'
         and date_trunc(day, contact__last_action_ended_at_ts) between {} and {}
         and CONTACT__IS_FOR_CS = 'true'
-        and ZENDESK_TICKET__CURRENT_STATUS = 'solved'
+        and CONTACT__CURRENT_STATUS = 'handled'
         and contact__last_queue_detail ilike '%cs%'
 """.format(start_period, end_period)
 
